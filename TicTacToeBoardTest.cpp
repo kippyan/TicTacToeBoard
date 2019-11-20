@@ -20,3 +20,10 @@ TEST(TicTacToeBoardTest, unitTestName)
 	ASSERT_TRUE(true);
 }
 */
+
+TEST(TicTacToeBoardTest, sanityCheck)
+{
+	ASSERT_TRUE(true);
+}
+
+//TEST(TicTacToeBoardTest, 

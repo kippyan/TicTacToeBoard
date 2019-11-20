@@ -29,5 +29,5 @@ TEST(TicTacToeBoardTest, sanityCheck)
 TEST(TicTacToeBoardTest, toggleX)
 {
   TicTacToeBoard board();
-  ASSERT_TRUE(board.toggleTurn() == 'O');
+  ASSERT_TRUE(board.toggleTurn() == O);
 }

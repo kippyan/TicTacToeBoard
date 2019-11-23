@@ -28,6 +28,6 @@ TEST(TicTacToeBoardTest, sanityCheck)
 
 TEST(TicTacToeBoardTest, toggleX)
 {
-  TicTacToeBoard board();
+  TicTacToeBoard board = TicTacToeBoard();
   ASSERT_TRUE(board.toggleTurn() == O);
 }

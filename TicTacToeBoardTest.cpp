@@ -26,28 +26,64 @@ TEST(TicTacToeBoardTest, sanityCheck)
 	ASSERT_TRUE(true);
 }
 
-TEST(TicTacToeBoardTest, toggleturn)
-{
-  TicTacToeBoard board = TicTacToeBoard();
-  ASSERT_TRUE(board.toggleTurn() == O);
-}
-
-TEST(TicTacToeBoardTest, constructortest)
+TEST(TicTacToeBoardTest, toggle1turn)
 {
   TicTacToeBoard board;
   ASSERT_TRUE(board.toggleTurn() == O);
 }
 
-TEST(TicTacToeBoardTest, toggletoggleturn)
+TEST(TicTacToeBoardTest, toggle2turn)
 {
-  TicTacToeBoard board = TicTacToeBoard();
+  TicTacToeBoard board;
+  board.toggleTurn();
+  ASSERT_TRUE(board.toggleTurn() == X);
+}
+
+TEST(TicTacToeBoardTest, toggle3turn)
+{
+  TicTacToeBoard board;
   board.toggleTurn();
   ASSERT_TRUE(board.toggleTurn() == X);
 }
 
 TEST(TicTacToeBoardTest, placeOrigin)
 {
-  TicTacToeBoard board = TicTacToeBoard();
-  ASSERT_TRUE(board.toggleTurn() == O);
+  TicTacToeBoard board;
+  ASSERT_TRUE(board.placePiece(0,0) == X);
+}
+
+TEST(TicTacToeBoardTest, replaceOrigin)
+{
+  TicTacToeBoard board;
+  board.placePiece(0,0);
+  ASSERT_TRUE(board.placePiece(0,0) == X);
+}
+
+TEST(TicTacToeBoardTest, placeCenter)
+{
+  TicTacToeBoard board;
+  ASSERT_TRUE(board.placePiece(1,1) == X);
+}
+
+TEST(TicTacToeBoardTest, placeAgain)
+{
+  TicTacToeBoard board;
+  board.placePiece(0,0);
+  ASSERT_TRUE(board.placePiece(1,1) == O);
+}
+
+TEST(TicTacToeBoardTest, placeOOB)
+{
+  TicTacToeBoard board;
+  ASSERT_TRUE(board.placePiece(-1,0) == ?);
+}
+
+TEST(TicTacToeBoardTest, fullBoard)
+{
+  TicTacToeBoard board;
+  for(int i = 0; i < BOARDSIZE; i++)
+    for(int j = 0; j < BOARDSIZE; j++)
+      board.placePiece(i,j);
+  ASSERT_TRUE(board.placePiece(3,3) == X);
 }
 

@@ -128,8 +128,11 @@ TEST(TicTacToeBoardTest, getWinnerTie)
 {
   TicTacToeBoard board;
   for(int i = 0; i < BOARDSIZE; i++)
-    for(int j = 0; j < BOARDSIZE; j++)
-      board.placePiece(i,j);
+      board.placePiece(i,0);
+   for(int i = 0; i < BOARDSIZE; i++)
+      board.placePiece(i,2);
+   for(int i = 0; i < BOARDSIZE; i++)
+      board.placePiece(i,1);
   ASSERT_TRUE(board.getWinner() == Blank);
 }
 

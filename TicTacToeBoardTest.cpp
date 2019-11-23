@@ -93,10 +93,16 @@ TEST(TicTacToeBoardTest, getorigin)
   ASSERT_TRUE(board.getPiece(0,0) == Blank);
 }
 
-TEST(TicTacToeBoardTest, getOOB)
+TEST(TicTacToeBoardTest, getNegOOB)
 {
   TicTacToeBoard board;
   ASSERT_TRUE(board.getPiece(-1,0) == Invalid);
+}
+
+TEST(TicTacToeBoardTest, getPosOOB)
+{
+  TicTacToeBoard board;
+  ASSERT_TRUE(board.getPiece(3,0) == Invalid);
 }
 
 TEST(TicTacToeBoardTest, getPiece)

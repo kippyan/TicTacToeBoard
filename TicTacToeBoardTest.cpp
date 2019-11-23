@@ -130,7 +130,7 @@ TEST(TicTacToeBoardTest, getWinnerTie)
   for(int i = 0; i < BOARDSIZE; i++)
     for(int j = 0; j < BOARDSIZE; j++)
       board.placePiece(i,j);
-  ASSERT_TRUE(board.getWinner == Blank);
+  ASSERT_TRUE(board.getWinner() == Blank);
 }
 
 TEST(TicTacToeBoardTest, getWinnerStraight)

@@ -117,3 +117,52 @@ TEST(TicTacToeBoardTest, getPiece)
   board.placePiece(0,0);
   ASSERT_TRUE(board.getPiece(0,0) == X);
 }
+
+TEST(TicTacToeBoardTest, getWinnerEmpty)
+{
+  TicTacToeBoard board;
+  ASSERT_TRUE(board.getWinner() == Invalid);
+}
+
+TEST(TicTacToeBoardTest, getWinnerTie)
+{
+  TicTacToeBoard board;
+  for(int i = 0; i < BOARDSIZE; i++)
+    for(int j = 0; j < BOARDSIZE; j++)
+      board.placePiece(i,j);
+  ASSERT_TRUE(board.getWinner == Blank);
+}
+
+TEST(TicTacToeBoardTest, getWinnerStraight)
+{
+  TicTacToeBoard board;
+  board.placePiece(0,0);
+  board.placePiece(1,1);
+  board.placePiece(0,1);
+  board.placePiece(2,2);
+  board.placePiece(0,2);
+  ASSERT_TRUE(board.getWinner() == X);
+}
+
+TEST(TicTacToeBoardTest, getWinnerDiag)
+{
+  TicTacToeBoard board;
+  board.placePiece(0,0);
+  board.placePiece(0,1);
+  board.placePiece(1,1);
+  board.placePiece(1,0);
+  board.placePiece(2,2);
+  ASSERT_TRUE(board.getWinner() == X);
+}
+
+TEST(TicTacToeBoardTest, getWinnerO)
+{
+  TicTacToeBoard board;
+  board.placePiece(1,2);
+  board.placePiece(0,0);
+  board.placePiece(0,1);
+  board.placePiece(1,1);
+  board.placePiece(1,0);
+  board.placePiece(2,2);
+  ASSERT_TRUE(board.getWinner() == O);
+}

@@ -84,7 +84,7 @@ TEST(TicTacToeBoardTest, fullBoard)
   for(int i = 0; i < BOARDSIZE; i++)
     for(int j = 0; j < BOARDSIZE; j++)
       board.placePiece(i,j);
-  ASSERT_TRUE(board.placePiece(3,3) == O);
+  ASSERT_TRUE(board.placePiece(3,3) == X);
 }
 /*
 TEST(TicTacToeBoardTest, getorigin)

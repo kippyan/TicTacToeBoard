@@ -90,8 +90,8 @@ TEST(TicTacToeBoardTest, fullBoard)
 TEST(TicTacToeBoardTest, getorigin)
 {
   TicTacToeBoard board;
-  ASSERT_TRUE(board.placePiece(-1,0) == Invalid);
-     
+  ASSERT_TRUE(board.getPiece(0,0) == Blank);
+}
 
 
 TEST(TicTacToeBoardTest, getOOB)

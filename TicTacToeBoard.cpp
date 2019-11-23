@@ -39,9 +39,9 @@ Piece TicTacToeBoard::placePiece(int row, int column)
 {
   if(row < 0 || row > BOARDSIZE || column < 0 || column > BOARDSIZE)
     return Invalid;
-  board.toggleTurn();
+  toggleTurn();
   if(board[row][column] == Blank)
-    return board[row][column] = board.toggleTurn();
+    return board[row][column] = toggleTurn();
   else
     return board[row][column];
   return Invalid;

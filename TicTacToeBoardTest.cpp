@@ -75,7 +75,7 @@ TEST(TicTacToeBoardTest, placeAgain)
 TEST(TicTacToeBoardTest, placeOOB)
 {
   TicTacToeBoard board;
-  ASSERT_TRUE(board.placePiece(-1,0) == ?);
+  ASSERT_TRUE(board.placePiece(-1,0) == Invalid);
 }
 
 TEST(TicTacToeBoardTest, fullBoard)
@@ -87,3 +87,15 @@ TEST(TicTacToeBoardTest, fullBoard)
   ASSERT_TRUE(board.placePiece(3,3) == X);
 }
 
+TEST(TicTacToeBoardTest, getorigin)
+{
+  TicTacToeBoard board;
+  ASSERT_TRUE(board.placePiece(-1,0) == Invalid);
+     
+
+
+TEST(TicTacToeBoardTest, getOOB)
+{
+  TicTacToeBoard board;
+  ASSERT_TRUE(board.getPiece(-1,0) == Invalid);
+}

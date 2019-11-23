@@ -32,9 +32,22 @@ TEST(TicTacToeBoardTest, toggleturn)
   ASSERT_TRUE(board.toggleTurn() == O);
 }
 
+TEST(TicTacToeBoardTest, constructortest)
+{
+  TicTacToeBoard board;
+  ASSERT_TRUE(board.toggleTurn() == O);
+}
+
 TEST(TicTacToeBoardTest, toggletoggleturn)
 {
   TicTacToeBoard board = TicTacToeBoard();
   board.toggleTurn();
   ASSERT_TRUE(board.toggleTurn() == X);
 }
+
+TEST(TicTacToeBoardTest, placeOrigin)
+{
+  TicTacToeBoard board = TicTacToeBoard();
+  ASSERT_TRUE(board.toggleTurn() == O);
+}
+

@@ -1,4 +1,4 @@
-<img class="notice-badge" src="https://coveralls.io/repos/github/kippyan/TicTacToeBoard/badge.svg?branch=master" alt="Badge">  <img src="https://travis-ci.org/kippyan/TicTacToeBoard.svg?branch=master" alt="Badge">
+<img src="https://coveralls.io/repos/github/kippyan/TicTacToeBoard/badge.svg?branch=master" alt="Badge">  <img src="https://travis-ci.org/kippyan/TicTacToeBoard.svg?branch=master" alt="Badge">
 
 # TicTacToeBoard
 

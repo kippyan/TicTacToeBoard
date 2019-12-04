@@ -136,7 +136,7 @@ TEST(TicTacToeBoardTest, getWinnerTie)
   ASSERT_TRUE(board.getWinner() == Blank);
 }
 
-TEST(TicTacToeBoardTest, getWinnerStraight)
+TEST(TicTacToeBoardTest, getWinnerHoriz)
 {
   TicTacToeBoard board;
   board.placePiece(0,0);
@@ -147,7 +147,18 @@ TEST(TicTacToeBoardTest, getWinnerStraight)
   ASSERT_TRUE(board.getWinner() == X);
 }
 
-TEST(TicTacToeBoardTest, getWinnerDiag)
+TEST(TicTacToeBoardTest, getWinnerVert)
+{
+  TicTacToeBoard board;
+  board.placePiece(0,0);
+  board.placePiece(1,1);
+  board.placePiece(1,0);
+  board.placePiece(2,2);
+  board.placePiece(2,0);
+  ASSERT_TRUE(board.getWinner() == X);
+}
+
+TEST(TicTacToeBoardTest, getWinnerBackDiag)
 {
   TicTacToeBoard board;
   board.placePiece(0,0);
@@ -155,6 +166,17 @@ TEST(TicTacToeBoardTest, getWinnerDiag)
   board.placePiece(1,1);
   board.placePiece(1,0);
   board.placePiece(2,2);
+  ASSERT_TRUE(board.getWinner() == X);
+}
+
+TEST(TicTacToeBoardTest, getWinnerForDiag)
+{
+  TicTacToeBoard board;
+  board.placePiece(0,2);
+  board.placePiece(0,1);
+  board.placePiece(1,1);
+  board.placePiece(1,0);
+  board.placePiece(0,2);
   ASSERT_TRUE(board.getWinner() == X);
 }
 
